@@ -20,5 +20,12 @@ public class BookController {
         BookModel byId = bookService.findById(id);
         return new ResponseEntity<>(byId, HttpStatus.OK);
     }
+
+    @GetMapping("publish")
+    public ResponseEntity<String> publishMessage(@RequestParam Long id) {
+        String publishMessage = bookService.publishMessage(id);
+        return new ResponseEntity<>(publishMessage, HttpStatus.OK);
+    }
+    
     
 }
